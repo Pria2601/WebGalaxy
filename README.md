@@ -63,6 +63,7 @@ Ensure you have the following installed:
 - **Python** (3.x)
 - **pip** (Python package manager)
 - **Node.js** and **npm**
+- **Gjango**
 
 ## Backend Setup
 ### Step 1: Navigate to the Backend Directory
@@ -106,13 +107,6 @@ npm install
 ```
 
 **Now your WebGalaxy project is up and running! 🚀**
-### Prerequisites
-Before installing and running the application, ensure you have the following installed:
-
-- **Node.js** (for front-end dependencies)
-- **npm** (Node Package Manager)
-- **Python** (for AI model processing, if required)
-- **Git** (for cloning the repository)
 
 
 ### Usage
