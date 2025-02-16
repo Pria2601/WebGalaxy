@@ -21,7 +21,7 @@ const Landing = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="relative w-full flex-grow flex flex-col items-end justify-center p-16 pr-32 text-right mt-">
+      <div className="relative w-full flex flex-col items-start  p-16  text- ">
         <div className="max-w-4xl space-y-6 sm:space-y-8 md:space-y-10">
           <p className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-xl ">
             Build your website in
@@ -31,7 +31,7 @@ const Landing = () => {
           </p>
         </div>
 
-        <div className="flex items-center rounded-md p-2 mt-[230px] w-full max-w-3xl ml-auto border-white relative bg-[#1F1F1F] shadow-lg">
+        <div className="flex items-center rounded-md p-2 mt-[230px] w-full max-w-3xl  border-white relative bg-[#1F1F1F] shadow-lg">
           <input
             className="flex-1 px-4 py-5 bg-[#1F1F1F] text-white placeholder-[#B5B5B5] border border-[#B5B5B5] focus:outline-none rounded-lg pr-16 shadow-md"
             placeholder="Provide your website name and describe it in a few words."

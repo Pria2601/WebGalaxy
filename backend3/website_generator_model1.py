@@ -667,7 +667,7 @@ def process(user_prompt):
             # Extract the HEX color code from the response
             base_color = response.text.strip()
             if base_color.startswith("#") and len(base_color) == 7:
-                return base_color
+                return None
             else:
                 print("Invalid HEX color code received. Returning fallback color.")
                 return None  # Fallback color if response is not valid
@@ -1763,6 +1763,6 @@ def process(user_prompt):
     html_content, css_content = get_html_and_css_from_folder(destination_folder)  
     return destination_folder, html_content, css_content      
         
-user_prompt=input("Enter prompt: ")
-folder, html, css = process(user_prompt)
+# user_prompt=input("Enter prompt: ")
+# folder, html, css = process(user_prompt)
 

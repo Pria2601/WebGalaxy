@@ -1,4 +1,4 @@
-
+import time
 
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
@@ -16,6 +16,7 @@ def predict():
     
     # Generate the website files
     folder_name, html_content, css_content = website_generator_model1.process(user_input)
+    # time.sleep(180)  
     
     return jsonify({
         "message": "Website ready!",
