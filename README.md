@@ -20,7 +20,7 @@ The system also includes a **drag-and-drop editor** for customization, **re-prom
 ### 2. Dynamic Website Generation
 - The AI automatically translates user descriptions into a **fully functional, mobile-responsive website**.
 - **Predefined color palettes and layouts** allow users to select styles that match their vision.
-- The platform provides **clean, well-structured front-end code** (HTML, CSS, JavaScript) for further customization.
+- The platform provides **clean, well-structured front-end code** (HTML, CSS, Images) for further customization.
 - AI models ensure **semantic correctness** in generated layouts, reducing manual adjustments.
 
 ### 3. Drag-and-Drop Customization
@@ -43,18 +43,20 @@ The system also includes a **drag-and-drop editor** for customization, **re-prom
 - Backend API operations and AI models are fine-tuned for **low latency and quick response**.
 - The system efficiently *caches reusable components*, accelerating rendering times for frequently requested designs.
 
-### 6. Login & Signup Page
-- Users can create an account and **save their generated websites** for future editing.
-- Authentication is securely handled via Firebase, ensuring **data privacy**.
-- Stored projects allow users to:
-  - **Resume unfinished website generation.**
-  - **Edit and refine previous designs.**
-  - **Download front-end code** for further development and deployment.
+### Login & Signup Feature (Future Prospect)
+The WebGalaxy project includes a **Login & Signup** feature using Django, which is designed for future enhancements such as:
 
+- **User Authentication** – Secure access for users.
+- **Personalization** – Save user-specific data and preferences.
+- **Role-Based Access** – Implement user roles for different privileges.
+- **Session Management** – Enable persistent logins and account recovery.
+- **Scalability** – Future integration with OAuth, JWT, or third-party authentication providers.
+
+At present, the feature is available but may require further refinements and integrations based on project needs.
 ---
 
-## Product UI & Installation Guide
-# WebGalaxy Installation Guide
+
+## Installation Guide
 
 ## Prerequisites
 Ensure you have the following installed:
@@ -69,9 +71,7 @@ cd backend3  # Navigate to the backend directory
 ```
 
 ### Step 2: Remove Unwanted Files
-```sh
-rm -rf generated/objects/pack/*
-```
+- delete all files in backend3 except website_generation_model.py, requirement.txt and app.py
 
 ### Step 3: Install Dependencies
 Create and activate a virtual environment:
@@ -95,35 +95,6 @@ pip install os re subprocess requests json5 matplotlib beautifulsoup4 \
 python app.py
 ```
 
-## Frontend Setup
-### Step 1: Navigate to the Frontend Directory
-```sh
-cd ../frontend
-```
-
-### Step 2: Install Dependencies
-```sh
-npm install
-```
-
-### Step 3: Start the Frontend
-```sh
-npm start
-```
-
-## Project Structure
-```
-WebGalaxy/
-│── backend3/           # Backend code
-│   ├── app.py          # Main server file
-│   ├── requirements.txt # Python dependencies
-│   ├── .env            # Environment variables
-│   ├── generated/      # Data (can be ignored)
-│── frontend/           # Frontend React app
-│   ├── src/           # Source code
-│   ├── package.json   # Frontend dependencies
-│── README.md          # Project documentation
-```
 
 ## Notes
 - Ensure `.env` is correctly configured.
@@ -143,20 +114,6 @@ Before installing and running the application, ensure you have the following ins
 - **Python** (for AI model processing, if required)
 - **Git** (for cloning the repository)
 
-### Installation Steps
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Kriti-Product-Development/WebGalaxy.git
-   cd frontend
-   ```
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-3. **Start the application:**
-   ```bash
-   npm start
-   ```
 
 ### Usage
 1. Open the application in a web browser.
@@ -173,7 +130,7 @@ Before installing and running the application, ensure you have the following ins
 The system is built using **a modular architecture** that ensures scalability and efficiency.
 
 ### 1. User Authentication
-- **Firebase Console** manages user accounts, ensuring secure login/signup and data persistence.
+- **Django Console** manages user accounts, ensuring secure login/signup and data persistence.
 
 ### 2. Frontend
 - Built using **React.js** for a dynamic and responsive UI.
@@ -181,16 +138,13 @@ The system is built using **a modular architecture** that ensures scalability an
 - Includes a **drag-and-drop editor** for post-generation customization.
 
 ### 3. Backend
-- **Node.js with Express.js** handles API requests and data flow efficiently.
 - **Flask (Python-based AI processing)** interprets user prompts and structures the website dynamically.
 
 ### 4. AI Model
 - **NLP Model (Gemini AI)** processes user descriptions and converts them into structured HTML/CSS components.
 - Uses a **pretrained language model** for **semantic interpretation** of website requirements, improving accuracy.
 
-### 5. Database
-- **Firebase Database** for **real-time project storage, authentication credentials, and retrieval**.
----
+
 
 ## Tech Stack
 
@@ -199,14 +153,13 @@ The system is built using **a modular architecture** that ensures scalability an
 - **Tailwind CSS** → For efficient, responsive styling.
 
 ### Backend:
-- **Node.js + Express.js** → Handles API calls and input processing.
 - **Python (Flask)** → Runs the AI processing engine.
 
 ### AI/NLP Model:
 - **Gemini AI** → Translates user inputs into structured web content.
 
 ### Database:
-- **Firebase** → Stores user data, authentication credentials, and saved projects.
+- **Django** → Stores user data, authentication credentials, and saved projects.
 ---
 ## Model UI
 ### Overview
@@ -244,7 +197,7 @@ from dotenv import load_dotenv
 load_dotenv("product_development.env")
 ```
 
-### How to Start Website Generation (this is where the model runs)
+### How to Start Website Generation (to run the model separately)
 #### 1. 
 To generate a website based on user input, run:
 ```bash
@@ -254,7 +207,7 @@ Then, enter the prompt specifying the website you want to generate. The generate
 #### 2. Website Regeneration
 For regenerating templates with an alternative match:
 ```bash
-python update_regenerate.py
+python main3.py
 ```
 Here, the user will enter the prompt either to regenerate the whole website or update specific sections based on the prompt. The updated website will be saved in the generated folder, where the user can run and check the modifications.
 
@@ -269,6 +222,7 @@ Here, the user will enter the prompt either to regenerate the whole website or u
 - At times, **changing the colour palette** results in **insufficient contrast** between the text and the background, affecting readability.
 - The Gemini server may occasionally experience **downtime**, disrupting content generation.
 -	When the Gemini API key **rate limit is exceeded**, it may cause the system to stop responding properly.
+-	When running model after giving prompt, if their is network issue, some error may be thrown on website. 
 ---
 
 ## Future Enhancements
@@ -291,6 +245,8 @@ Here, the user will enter the prompt either to regenerate the whole website or u
 
 ### 6. Mobile App Version
 - Develop a **mobile application** to allow users to generate websites **on the go**.
+### 7. Personalisation
+- Users in future will be able to get personalised results, past history and 
 
 ---
 
