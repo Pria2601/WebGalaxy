@@ -1,0 +1,12 @@
+os
+re
+subprocess
+requests
+json5
+matplotlib
+beautifulsoup4
+google-generativeai
+pillow
+sentence-transformers
+shutil
+python-dotenv
