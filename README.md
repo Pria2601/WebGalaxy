@@ -54,7 +54,87 @@ The system also includes a **drag-and-drop editor** for customization, **re-prom
 ---
 
 ## Product UI & Installation Guide
+# WebGalaxy Installation Guide
 
+## Prerequisites
+Ensure you have the following installed:
+- **Python** (3.x)
+- **pip** (Python package manager)
+- **Node.js** and **npm**
+
+## Backend Setup
+### Step 1: Navigate to the Backend Directory
+```sh
+cd backend3  # Navigate to the backend directory
+```
+
+### Step 2: Remove Unwanted Files
+```sh
+rm -rf generated/objects/pack/*
+```
+
+### Step 3: Install Dependencies
+Create and activate a virtual environment:
+```sh
+python -m venv venv  
+source venv/bin/activate  # On macOS/Linux
+venv\Scripts\activate     # On Windows
+```
+Install required Python packages:
+```sh
+pip install -r requirements.txt
+```
+If `requirements.txt` is missing:
+```sh
+pip install os re subprocess requests json5 matplotlib beautifulsoup4 \
+             google-generativeai pillow sentence-transformers shutil python-dotenv
+```
+
+### Step 4: Run the Backend Server
+```sh
+python app.py
+```
+
+## Frontend Setup
+### Step 1: Navigate to the Frontend Directory
+```sh
+cd ../frontend
+```
+
+### Step 2: Install Dependencies
+```sh
+npm install
+```
+
+### Step 3: Start the Frontend
+```sh
+npm start
+```
+
+## Project Structure
+```
+WebGalaxy/
+│── backend3/           # Backend code
+│   ├── app.py          # Main server file
+│   ├── requirements.txt # Python dependencies
+│   ├── .env            # Environment variables
+│   ├── generated/      # Data (can be ignored)
+│── frontend/           # Frontend React app
+│   ├── src/           # Source code
+│   ├── package.json   # Frontend dependencies
+│── README.md          # Project documentation
+```
+
+## Notes
+- Ensure `.env` is correctly configured.
+- If you face permission issues, try running commands with `sudo` (Linux/macOS) or **Run as Administrator** (Windows).
+- If `npm start` fails, delete `node_modules` and `package-lock.json`, then run:
+```sh
+rm -rf node_modules package-lock.json
+npm install
+```
+
+**Now your WebGalaxy project is up and running! 🚀**
 ### Prerequisites
 Before installing and running the application, ensure you have the following installed:
 
